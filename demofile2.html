@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Get Text Input Field Value in JavaScript</title>
+</head>
+<body>
+  <form action="fileupload" method="post" enctype="multipart/form-data">
+    Image Name:
+    <input type="text" placeholder="Name your image" name="imagename" valuename="imagename" id="myInput"><br>
+    <input type="file" name="filetoupload"><br>
+    <input type="submit" onclick="getInputValue();">
+    <script>
+        function getInputValue(){
+            // Selecting the input element and get its value
+            var inputVal = document.getElementById("myInput").value;
+            
+            // Displaying the value
+            alert(inputVal);
+        }
+    </script>
+  </form>
+</body>
+</html>

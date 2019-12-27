@@ -20,7 +20,7 @@ http.createServer(function (req, res) {
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
       });
-      fs.readFile('demofile1.html', function(err, data) {
+      fs.readFile('demofile2.html', function(err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(data);
         res.end();
@@ -39,7 +39,7 @@ http.createServer(function (req, res) {
     res.write(txt);
 
 
-    fs.readFile('demofile1.html', function(err, data) {
+    fs.readFile('demofile2.html', function(err, data) {
      res.write(data);
      res.end();
     });
