@@ -7,11 +7,14 @@ var formidable = require('formidable');
 http.createServer(function (req, res) {
   console.log("debug 1:" + req.url)
   if (req.url == '/fileupload') {
-    //console.log("debug 2")
+    var q = url.parse(req.url, true).query;
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
+      //var imgname = unescape(fields.imagename);
+      var imgname = fields.imagename;
       var oldpath = files.filetoupload.path;
-      var newpath = '/Users/yali/homestuff/images/' + files.filetoupload.name;
+      var newpath = '/Users/yali/homestuff/images/' + imgname;
+      console.log("debug 4: "+imgname);
       //console.log(oldpath);
       //console.log(newpath);
       fs.rename(oldpath, newpath, function (err) {
